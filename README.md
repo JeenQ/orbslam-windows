@@ -4,10 +4,11 @@ Easy build for ORB Slam 2 on Windows
 1. Make a directory called build in orbslam-windows/Thirdparty/DBoW2
 - Run CMake GUI and set source code to orbslam-windows/Thirdparty/DBoW2 and where to build the binaries to orbslam-windows/Thirdparty/DBoW2/build
 - Press Configure and choose Visual Studio 14 2015 Win64 or Visual Studio 12 2013 Win64
+- OpenCV_DIR : C:\opencv\build
 - Press Generate
 - Open the resulting project in the build directory in Visual Studio
 - Change build type to Release (in white box up top, should initially say Debug)
-- Right click on DBoW2 project -> Properties -> General: change Target Extension to .lib and Configuration Type to Static Library (.lib)
+- Right click on DBoW2 project -> Properties -> 일반 : Configuration Type to Static Library (.lib), 고급: change Target Extension to .lib 
 - Go to C/C++ Tab -> Code Generation and change Runtime Library to Multi-threaded (/MT)
 - Build ALL_BUILD. You should get lots of warnings but no errors
 
@@ -17,7 +18,7 @@ Easy build for ORB Slam 2 on Windows
 - Press Generate
 - Open the resulting project in the build directory in Visual Studio
 - Change build type to Release (in white box up top, should initially say Debug)
-- Right click on g2o project -> Properties -> General: change Target Extension to .lib and Configuration Type to Static Library (.lib)
+- Right click on g2o project -> Properties -> 일반 : Configuration Type to Static Library (.lib), 고급: change Target Extension to .lib 
 - Go to C/C++ Tab -> Code Generation and change Runtime Library to Multi-threaded (/MT)
 - Go to C/C++ -> Preprocessor and press the dropdown arrow in the Preprocessor Definitions, then add a new line with WINDOWS on it (no underscore), then press OK, then Apply
 - Build ALL_BUILD.
@@ -37,7 +38,7 @@ Easy build for ORB Slam 2 on Windows
 - Press Generate
 - Open the resulting project in the build directory in Visual Studio
 - Change build type to Release (in white box up top, should initially say Debug)
-- Right click on ORB_SLAM2 project -> Properties -> General: change Target Extension to .lib and Configuration Type to Static Library (.lib)
+- Right click on ORB_SLAM2 project -> Properties -> 일반 : Configuration Type to Static Library (.lib), 고급: change Target Extension to .lib 
 - Go to C/C++ Tab -> Code Generation and change Runtime Library to Multi-threaded (/MT)
 
 I had to disable warnings in Orb Slam because otherwise there were so many they crashed visual studio. You will still see a few but not very many
@@ -51,3 +52,7 @@ If you want to build any of the examples (such as mono_euroc), do the following:
 - Right click on it and press build
 
 Then you will find them, say if you do mono_, in (orbslam-windows\Examples\Monocular\Release)
+
+4. KITTI
+- https://drive.google.com/drive/folders/1MpmoJ70W-UZvGLzukRzBUbObhC48XyAg?usp=sharing  
+- ./Examples/Monocular/mono_kitti Vocabulary/ORBvoc.txt Examples/Monocular/KITTIX.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER
