@@ -4,7 +4,7 @@ Easy build for ORB Slam 2 on Windows
 1. Make a directory called build in orbslam-windows/Thirdparty/DBoW2
 - Run CMake GUI and set source code to orbslam-windows/Thirdparty/DBoW2 and where to build the binaries to orbslam-windows/Thirdparty/DBoW2/build
 - Press Configure and choose Visual Studio 14 2015 Win64 or Visual Studio 12 2013 Win64
-- OpenCV_DIR : C:\opencv\build
+- OpenCV_DIR : "C:\opencv\build" or "C:\opencv\build\x64\vc15\lib"
 - Press Generate
 - Open the resulting project in the build directory in Visual Studio
 - Change build type to Release (in white box up top, should initially say Debug)
@@ -35,6 +35,7 @@ Easy build for ORB Slam 2 on Windows
 3. Make a directory called build in orbslam-windows
 - Run CMake GUI and set source code to orbslam-windows and where to build the binaries to orbslam-windows/build
 - Press Configure and choose Visual Studio 14 2015 Win64 or Visual Studio 12 2013 Win64
+- OpenCV_DIR : "C:\opencv\build" or "C:\opencv\build\x64\vc15\lib"
 - Press Generate
 - Open the resulting project in the build directory in Visual Studio
 - Change build type to Release (in white box up top, should initially say Debug)
@@ -46,13 +47,20 @@ I had to disable warnings in Orb Slam because otherwise there were so many they 
 - Right click on the ORB_SLAM2 project (NOT ALL_BUILD) and click Build
 - If you're lucky, that will take few minutes then successfully build!
 
-If you want to build any of the examples (such as mono_euroc), do the following:
-
+4. mono_kitti
 - Right click on that project and go to Properties -> C/C++ -> Code Generation, and change Runtime Library to Multi-threaded (/MT). Then press apply
 - Right click on it and press build
+- Dataset
+    - https://drive.google.com/file/d/1bJOzTH4KyCZXKP99EG26m1mrp_C4eoq8/view?usp=sharing
+- Right click on that project and go to Properties -> 디버깅 -> 명령 인수
+    - Vocabulary/ORBvoc.txt Examples/Monocular/KITTI00-02.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER
+- Right click on that project and go to 시작 프로그램으로 설정
+- ctrl + F5 or F5
 
-Then you will find them, say if you do mono_, in (orbslam-windows\Examples\Monocular\Release)
-
-4. KITTI
-- https://drive.google.com/drive/folders/1MpmoJ70W-UZvGLzukRzBUbObhC48XyAg?usp=sharing  
-- ./Examples/Monocular/mono_kitti Vocabulary/ORBvoc.txt Examples/Monocular/KITTIX.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER
+5. mono_webcam
+- Right click on that project and go to Properties -> C/C++ -> Code Generation, and change Runtime Library to Multi-threaded (/MT). Then press apply
+- Right click on it and press build
+- Right click on that project and go to Properties -> 디버깅 -> 명령 인수
+    - Vocabulary/ORBvoc.txt Examples/Monocular/logitech_c270.yaml
+- Right click on that project and go to 시작 프로그램으로 설정
+- ctrl + F5 or F5
