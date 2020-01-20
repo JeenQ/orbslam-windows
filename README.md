@@ -53,7 +53,7 @@ I had to disable warnings in Orb Slam because otherwise there were so many they 
 - Dataset
     - https://drive.google.com/file/d/1bJOzTH4KyCZXKP99EG26m1mrp_C4eoq8/view?usp=sharing
 - Right click on that project and go to Properties -> 디버깅 -> 명령 인수
-    - Vocabulary/ORBvoc.txt Examples/Monocular/KITTI00-02.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER
+    - PATH_TO_ORB_SLAM_FOLDER\Vocabulary\ORBvoc.txt PATH_TO_ORB_SLAM_FOLDER\Examples\Monocular\KITTI00-02.yaml PATH_TO_DATASET_FOLDER\dataset\sequences\SEQUENCE_NUMBER
 - Right click on that project and go to 시작 프로그램으로 설정
 - ctrl + F5 or F5
 
@@ -61,6 +61,6 @@ I had to disable warnings in Orb Slam because otherwise there were so many they 
 - Right click on that project and go to Properties -> C/C++ -> Code Generation, and change Runtime Library to Multi-threaded (/MT). Then press apply
 - Right click on it and press build
 - Right click on that project and go to Properties -> 디버깅 -> 명령 인수
-    - Vocabulary/ORBvoc.txt Examples/Monocular/logitech_c270.yaml
+    - PATH_TO_ORB_SLAM_FOLDER\Vocabulary\ORBvoc.txt PATH_TO_ORB_SLAM_FOLDER\Examples\Monocular\logitech_c270.yaml
 - Right click on that project and go to 시작 프로그램으로 설정
 - ctrl + F5 or F5
