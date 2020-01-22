@@ -1,4 +1,7 @@
 # ORB_SLAM2_Windows
+
+2020 winter Handong Global University advanced computer vision camp
+
 Easy build for ORB Slam 2 on Windows
 
 ## 1. Make a directory called build in orbslam-windows/Thirdparty/DBoW2
